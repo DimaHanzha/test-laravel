@@ -50,25 +50,23 @@
                         </thead>
                         <tbody>
                         @foreach($books as $book)
-                            @if(count($book->authors))
-                                <tr>
-                                    <td>{{$book->title}}</td>
-                                    <td>{{$book->isbn}}</td>
-                                    <td>
-                                        {{$book->authors->pluck('full_name')->join(', ')}}
-                                    </td>
-                                    <td>
-                                        <a href="{{route('book.edit', $book->id)}}" class="btn btn-secondary">Edit</a>
-                                    </td>
-                                    <td>
-                                        <form action="{{ route('book.destroy',  $book->id) }}" method="post">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button onclick="return confirm('are you sure?')" type="submit" class="btn btn-danger">Delete</button>
-                                        </form>
-                                    </td>
-                                </tr>
-                            @endif
+                            <tr>
+                                <td>{{$book->title}}</td>
+                                <td>{{$book->isbn}}</td>
+                                <td>
+                                    {{$book->authors->pluck('full_name')->join(', ')}}
+                                </td>
+                                <td>
+                                    <a href="{{route('book.edit', $book->id)}}" class="btn btn-secondary">Edit</a>
+                                </td>
+                                <td>
+                                    <form action="{{ route('book.destroy',  $book->id) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button onclick="return confirm('are you sure?')" type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
                         @endforeach
                         </tbody>
                     </table>

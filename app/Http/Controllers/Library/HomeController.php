@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers\Library;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Model\Author;
 
+/**
+ * Class HomeController
+ */
 class HomeController extends Controller
 {
     /**
@@ -14,6 +17,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $authors = Author::all();
+
+        return view('home', [
+            'authors' => $authors
+        ]);
     }
 }

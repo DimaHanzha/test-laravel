@@ -5,9 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Model\Author;
 use App\Model\Book;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
+/**
+ * Class IndexController
+ */
 class IndexController extends Controller
 {
     /**

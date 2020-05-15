@@ -22,6 +22,7 @@ Route::namespace('Api')->prefix('v1/')->group(function () {
     Route::prefix('books')->name('books')->group(function (){
         Route::get('/list', 'BookController@index')->name('list');
         Route::get('/{book}','BookController@show')->name('showById');
+        /** I think here need use PATCH */
         Route::patch('/update/{book}','BookController@update')->name('update');
         Route::delete('/delete/{book}', 'BookController@destroy')->name('delete');
     });

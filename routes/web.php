@@ -31,7 +31,7 @@ Route::namespace('Admin')->middleware(['admin'])->group(function () {
         Route::get('/create', 'AuthorController@create')->name('create');
         Route::put('/update/{author}', 'AuthorController@update')->name('update');
         Route::post('/store', 'AuthorController@store')->name('store');
-        Route::delete('/destroy/{author}', 'AuthorController@destroy')->name('destroy');
+        Route::delete('/delete/{author}', 'AuthorController@destroy')->name('destroy');
     });
 
     Route::prefix('admin/book')->name('book.')->group(function (){
@@ -39,6 +39,6 @@ Route::namespace('Admin')->middleware(['admin'])->group(function () {
         Route::get('/create', 'BookController@create')->name('create');
         Route::put('/update/{book}', 'BookController@update')->name('update');
         Route::post('/store', 'BookController@store')->name('store');
-        Route::delete('/destroy/{book}', 'BookController@destroy')->name('destroy');
+        Route::delete('/delete/{book}', 'BookController@destroy')->name('destroy');
     });
 });

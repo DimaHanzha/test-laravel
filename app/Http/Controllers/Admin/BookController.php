@@ -78,7 +78,7 @@ class BookController extends Controller
      * @param Book $book
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(StoreBook $request, Book $book)
+    public function update(Book $book, StoreBook $request)
     {
         $this->bookService->updateBook($request->validated(), $book);
 

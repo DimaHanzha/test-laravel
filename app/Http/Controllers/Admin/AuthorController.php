@@ -76,7 +76,7 @@ class AuthorController extends Controller
      * @param StoreAuthor $request
      * @param Author $author
      */
-    public function update(StoreAuthor $request, Author $author)
+    public function update(Author $author, StoreAuthor $request)
     {
         $this->authorService->updateAuthor($request->validated(), $author);
 
